@@ -18,7 +18,7 @@ configurations {
 
 dependencies {
     // Use TestNG framework, also requires calling test.useTestNG() below
-    testImplementation 'org.testng:testng:7.4.0'
+    implementation 'org.testng:testng:7.5'
     //Selenium
     implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.1.1'
     implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.0.3'

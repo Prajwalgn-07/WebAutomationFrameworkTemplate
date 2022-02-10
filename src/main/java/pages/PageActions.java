@@ -1,8 +1,14 @@
 package pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Attachment;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
+
+import java.io.File;
+import java.io.IOException;
+import java.time.LocalDateTime;
+import java.util.List;
 
 public class PageActions {
     private WebDriver webDriver;
@@ -19,5 +25,39 @@ public class PageActions {
     }
     public String getChildText(WebElement webElement, By by){
         return webElement.findElement(by).getText();
+    }
+    public String getPageTitle(){
+        return this.webDriver.getTitle();
+    }
+    public JavascriptExecutor jsDriver() {
+        return ((JavascriptExecutor) this.webDriver);
+    }
+    public String getCurrentPageUrl(){
+        return this.webDriver.getCurrentUrl();
+    }
+    public void quit(){
+        this.webDriver.quit();
+    }
+    public void close(){
+        this.webDriver.close();
+    }
+    public WebElement findElement(By by){
+        return this.webDriver.findElement(by);
+    }
+    public List<WebElement> findElements(By by){
+        return this.webDriver.findElements(by);
+    }
+    public void deleteCookies(){
+        this.webDriver.manage().deleteAllCookies();
+    }
+    public void takeScreenshot(String destinationPath){
+        TakesScreenshot scrShot =((TakesScreenshot)webDriver);
+        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+        File DestFile=new File(destinationPath);
+        try {
+            FileUtils.copyFile(SrcFile, DestFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
