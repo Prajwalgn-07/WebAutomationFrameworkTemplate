@@ -9,11 +9,11 @@ import org.openqa.selenium.WebDriver;
 import java.io.File;
 import java.io.IOException;
 
-public class ScreenshotTaker {
+public class ScreenShotTaker {
 
     private final WebDriver webDriver;
 
-    public ScreenshotTaker(WebDriver webDriver) {
+    public ScreenShotTaker(WebDriver webDriver) {
         this.webDriver=webDriver;
     }
 

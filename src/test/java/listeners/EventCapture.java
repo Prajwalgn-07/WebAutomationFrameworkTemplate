@@ -1,6 +1,6 @@
 package listeners;
 
-import internal.ScreenshotTaker;
+import internal.ScreenShotTaker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
@@ -144,6 +144,6 @@ public class EventCapture implements WebDriverEventListener {
     }
 
     private void callScreenShotTaker(WebElement webElement,WebDriver webDriver){
-        new ScreenshotTaker(webDriver).captureScreenshot(webElement.getAccessibleName());
+        new ScreenShotTaker(webDriver).captureScreenshot(webElement.getAccessibleName());
     }
 }

@@ -1,7 +1,7 @@
 package base;
 
 import drivers.DriverCreator;
-import internal.ScreenshotTaker;
+import internal.ScreenShotTaker;
 import listeners.EventCapture;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -21,7 +21,7 @@ public class BaseTest {
         return webDriver;
     }
     protected void takeScreenShotOnTestFailure(ITestResult iTestResult){
-        new ScreenshotTaker(webDriver).captureScreenshot(iTestResult.getTestName());
+        new ScreenShotTaker(webDriver).captureScreenshot(iTestResult.getTestName());
     }
 
 }

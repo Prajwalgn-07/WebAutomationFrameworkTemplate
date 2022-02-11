@@ -50,14 +50,5 @@ public class PageActions {
     public void deleteCookies(){
         this.webDriver.manage().deleteAllCookies();
     }
-    public void takeScreenshot(String destinationPath){
-        TakesScreenshot scrShot =((TakesScreenshot)webDriver);
-        File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
-        File DestFile=new File(destinationPath);
-        try {
-            FileUtils.copyFile(SrcFile, DestFile);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
 }
